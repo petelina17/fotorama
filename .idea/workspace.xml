@@ -4,6 +4,8 @@
     <list default="true" id="e94ecc7c-f346-4c57-8d78-256847c52247" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Catalog.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/Catalog.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FrameBox.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/FrameBox.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +54,7 @@
       <option name="presentableId" value="Default" />
       <updated>1582153110489</updated>
       <workItem from="1582153111978" duration="6237000" />
-      <workItem from="1582317751886" duration="9492000" />
+      <workItem from="1582317751886" duration="11136000" />
     </task>
     <task id="LOCAL-00001" summary="catalog grey boxes">
       <created>1582155707830</created>
@@ -75,7 +77,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582325955726</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add latest name to favorite and basket buttons">
+      <created>1582327320486</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1582327320486</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -85,14 +94,15 @@
     <MESSAGE value="catalog grey boxes" />
     <MESSAGE value="toolbar with icons" />
     <MESSAGE value="nav panel; nav icons with badges; on-click events handling" />
-    <option name="LAST_COMMIT_MESSAGE" value="nav panel; nav icons with badges; on-click events handling" />
+    <MESSAGE value="add latest name to favorite and basket buttons" />
+    <option name="LAST_COMMIT_MESSAGE" value="add latest name to favorite and basket buttons" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2982" y="575" width="1092" height="1010" key="CommitChangelistDialog2" timestamp="1582325955334">
+    <state x="2982" y="575" width="1092" height="1010" key="CommitChangelistDialog2" timestamp="1582327320367">
       <screen x="1920" y="0" width="3840" height="2160" />
     </state>
     <state x="2190" y="575" width="1041" height="1010" key="CommitChangelistDialog2/0.0.5760.2160@0.0.5760.2160" timestamp="1582157855573" />
-    <state x="2982" y="575" width="1092" height="1010" key="CommitChangelistDialog2/1920.0.3840.2160/0.1080.1920.1080@1920.0.3840.2160" timestamp="1582325955334" />
+    <state x="2982" y="575" width="1092" height="1010" key="CommitChangelistDialog2/1920.0.3840.2160/0.1080.1920.1080@1920.0.3840.2160" timestamp="1582327320367" />
     <state x="236" y="63" width="795" height="747" key="FileChooserDialogImpl" timestamp="1582186138730">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

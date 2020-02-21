@@ -2,13 +2,15 @@
     import { createEventDispatcher } from 'svelte';
 
     export let title;
+    export let heartSelected = false;
 
     // Svelte: special feature to sent events to parent component
     const dispatch = createEventDispatcher();
 
     function heartClick() {
         // send to parent-component event "heart-click" with object as a param (event.detail)
-        dispatch('heart-click', {title: title})
+        dispatch('heart-click', {title: title});
+        heartSelected = true;
     }
 
     function basketClick() {
@@ -22,7 +24,9 @@
         <i class="fas fa-search-plus"></i>
 
         <!--        bind function heartClick to mouse click event on icon-->
-        <i class="far fa-heart" on:click={heartClick}></i>
+        <i class="fas fa-heart"
+           style="{heartSelected ? 'color:red' : ''}"
+           on:click={heartClick}></i>
         <i class="fas fa-cart-plus" on:click={basketClick}></i>
 
     </div>

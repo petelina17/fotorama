@@ -5,17 +5,20 @@
 
     let user = {
         favoriteNumber: 0,
-        basketNumber: 0
+        basketNumber: 0,
+        favoriteList: []
     };
 
     let latestFavorite = 'Latest saved';
     let latestBasket = 'Latest add to basket';
 
     function addFavoriteNumber (event) {
-        user.favoriteNumber += 1;
-        localStorage.setItem('chicago-user', JSON.stringify(user));
         latestFavorite = event.detail.title;
-        // console.log(event)
+        if (!user.favoriteList.includes(latestFavorite)) {
+            user.favoriteList.push(latestFavorite);
+            user.favoriteNumber += 1;
+        }
+        localStorage.setItem('chicago-user', JSON.stringify(user));
     }
 
     function addBasketNumber (event) {
@@ -46,7 +49,10 @@
     <button on:click={addBasketNumber}>+basket</button>
     <span>{latestBasket}</span>
 
-    <Catalog on:framebox-heart={addFavoriteNumber} on:framebox-basket={addBasketNumber} />
+    <Catalog favorites={user.favoriteList}
+            on:framebox-heart={addFavoriteNumber}
+            on:framebox-basket={addBasketNumber}
+    />
 </main>
 
 <style>

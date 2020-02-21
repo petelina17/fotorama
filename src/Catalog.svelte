@@ -2,6 +2,8 @@
     import { createEventDispatcher } from 'svelte';
     import FrameBox from "./FrameBox.svelte";
 
+    export let favorites = [];
+
     const list = ['mountain', 'ocean', 'sea', 'desert', 'forest', 'sky', 'sunrise', 'sunset',
     'cat', 'dog', 'horse', 'pig', 'fox', 'bird', 'rabbit', 'city', 'road', 'car', 'park',
     'burger', 'beer', 'coffe', 'cake', 'ice-cream'];
@@ -20,9 +22,11 @@
 
 <!-- Svelte: HTML template with javascript injections and logic constructions -->
 <div class="catalog">
+    <!-- Svelte: iterate array "list"  -->
     {#each list as frame, i}
     <div class="frame-box">
         <FrameBox title={frame}
+                  heartSelected={favorites.includes(frame)}
                   on:heart-click={frameboxHeartHandler}
                   on:basket-click={frameboxBasketHandler}
         />
