@@ -8,14 +8,20 @@
         basketNumber: 0
     };
 
-    function addFavoriteNumber () {
+    let latestFavorite = 'Latest saved';
+    let latestBasket = 'Latest add to basket';
+
+    function addFavoriteNumber (event) {
         user.favoriteNumber += 1;
-        localStorage.setItem('chicago-user', JSON.stringify(user))
+        localStorage.setItem('chicago-user', JSON.stringify(user));
+        latestFavorite = event.detail.title;
+        // console.log(event)
     }
 
-    function addBasketNumber () {
+    function addBasketNumber (event) {
         user.basketNumber += 1;
-		localStorage.setItem('chicago-user', JSON.stringify(user))
+		localStorage.setItem('chicago-user', JSON.stringify(user));
+		latestBasket = event.detail.title;
     }
 
     // Every component has a lifecycle that starts when it is created, and ends when it is destroyed.
@@ -36,7 +42,9 @@
 
 <!--	Svelte: bind function to button click -->
     <button on:click={addFavoriteNumber}>+favorite</button>
+    <span>{latestFavorite}</span>
     <button on:click={addBasketNumber}>+basket</button>
+    <span>{latestBasket}</span>
 
     <Catalog on:framebox-heart={addFavoriteNumber} on:framebox-basket={addBasketNumber} />
 </main>
