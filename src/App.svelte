@@ -1,30 +1,64 @@
 <script>
-	import Catalog from "./Catalog.svelte";
+	import { onMount } from 'svelte';
+    import Catalog from "./Catalog.svelte";
+    import NavPanel from "./NavPanel.svelte";
 
+    let user = {
+        favoriteNumber: 0,
+        basketNumber: 0
+    };
+
+    function addFavoriteNumber () {
+        user.favoriteNumber += 1;
+        localStorage.setItem('chicago-user', JSON.stringify(user))
+    }
+
+    function addBasketNumber () {
+        user.basketNumber += 1;
+		localStorage.setItem('chicago-user', JSON.stringify(user))
+    }
+
+    // Every component has a lifecycle that starts when it is created, and ends when it is destroyed.
+	// There are a handful of functions that allow you to run code at key moments during that lifecycle.
+	// Svelte specific function: runs after the component is first rendered to the DOM
+	onMount(async () => {
+		const stored = localStorage.getItem('chicago-user');
+		if (stored != null && stored !== '') {
+			user = JSON.parse(stored)
+		}
+
+	});
 </script>
 
 <main>
-	<Catalog />
+<!--	reactivity: component watches parameter values changing-->
+    <NavPanel basketNumber={user.basketNumber} favoriteNumber={user.favoriteNumber}/>
+
+<!--	Svelte: bind function to button click -->
+    <button on:click={addFavoriteNumber}>+favorite</button>
+    <button on:click={addBasketNumber}>+basket</button>
+
+    <Catalog on:framebox-heart={addFavoriteNumber} on:framebox-basket={addBasketNumber} />
 </main>
 
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
+    main {
+        text-align: center;
+        padding: 0;
+        max-width: 240px;
+        margin: 0 auto;
+    }
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
+    h1 {
+        color: #ff3e00;
+        text-transform: uppercase;
+        font-size: 4em;
+        font-weight: 100;
+    }
 
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
+    @media (min-width: 640px) {
+        main {
+            max-width: none;
+        }
+    }
 </style>

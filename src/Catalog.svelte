@@ -1,14 +1,31 @@
 <script>
+    import { createEventDispatcher } from 'svelte';
     import FrameBox from "./FrameBox.svelte";
+
     const list = ['mountain', 'ocean', 'sea', 'desert', 'forest', 'sky', 'sunrise', 'sunset',
     'cat', 'dog', 'horse', 'pig', 'fox', 'bird', 'rabbit', 'city', 'road', 'car', 'park',
-    'burger', 'beer', 'coffe', 'cake', 'ice-cream']
+    'burger', 'beer', 'coffe', 'cake', 'ice-cream'];
+
+    // Svelte: special feature to sent events to parent component
+    const dispatch = createEventDispatcher();
+
+    function frameboxHeartHandler(event) {
+        dispatch('framebox-heart', event.detail)
+    }
+
+    function frameboxBasketHandler(event) {
+        dispatch('framebox-basket', event.detail)
+    }
 </script>
 
+<!-- Svelte: HTML template with javascript injections and logic constructions -->
 <div class="catalog">
     {#each list as frame, i}
     <div class="frame-box">
-        <FrameBox title={frame} />
+        <FrameBox title={frame}
+                  on:heart-click={frameboxHeartHandler}
+                  on:basket-click={frameboxBasketHandler}
+        />
     </div>
     {/each}
 </div>
