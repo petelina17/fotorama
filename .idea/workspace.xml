@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e94ecc7c-f346-4c57-8d78-256847c52247" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Catalog.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/Catalog.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FrameBox.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/FrameBox.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,6 +37,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -55,6 +56,7 @@
       <updated>1582153110489</updated>
       <workItem from="1582153111978" duration="6237000" />
       <workItem from="1582317751886" duration="11136000" />
+      <workItem from="1582366597790" duration="3247000" />
     </task>
     <task id="LOCAL-00001" summary="catalog grey boxes">
       <created>1582155707830</created>
@@ -98,14 +100,22 @@
     <option name="LAST_COMMIT_MESSAGE" value="add latest name to favorite and basket buttons" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2982" y="575" width="1092" height="1010" key="CommitChangelistDialog2" timestamp="1582327320367">
+    <state x="2982" y="575" width="1092" height="1010" key="CommitChangelistDialog2" timestamp="1582329041599">
       <screen x="1920" y="0" width="3840" height="2160" />
     </state>
     <state x="2190" y="575" width="1041" height="1010" key="CommitChangelistDialog2/0.0.5760.2160@0.0.5760.2160" timestamp="1582157855573" />
-    <state x="2982" y="575" width="1092" height="1010" key="CommitChangelistDialog2/1920.0.3840.2160/0.1080.1920.1080@1920.0.3840.2160" timestamp="1582327320367" />
+    <state x="2982" y="575" width="1092" height="1010" key="CommitChangelistDialog2/1920.0.3840.2160/0.1080.1920.1080@1920.0.3840.2160" timestamp="1582329041599" />
     <state x="236" y="63" width="795" height="747" key="FileChooserDialogImpl" timestamp="1582186138730">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="236" y="63" width="795" height="747" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1582186138730" />
+    <state x="2219" y="626" key="SettingsEditor" timestamp="1582397570328">
+      <screen x="1920" y="0" width="3840" height="2160" />
+    </state>
+    <state x="2219" y="626" key="SettingsEditor/1920.0.3840.2160/0.1080.1920.1080@1920.0.3840.2160" timestamp="1582397570328" />
+    <state x="2867" y="501" width="840" height="1034" key="search.everywhere.popup" timestamp="1582397312799">
+      <screen x="1920" y="0" width="3840" height="2160" />
+    </state>
+    <state x="2867" y="501" width="840" height="1034" key="search.everywhere.popup/1920.0.3840.2160/0.1080.1920.1080@1920.0.3840.2160" timestamp="1582397312799" />
   </component>
 </project>

@@ -35,15 +35,14 @@
 		if (stored != null && stored !== '') {
 			user = JSON.parse(stored)
 		}
-
 	});
 </script>
 
 <main>
-<!--	reactivity: component watches parameter values changing-->
+    <!--	reactivity: component watches parameter values changing-->
     <NavPanel basketNumber={user.basketNumber} favoriteNumber={user.favoriteNumber}/>
 
-<!--	Svelte: bind function to button click -->
+    <!--	Svelte: bind function to button click -->
     <button on:click={addFavoriteNumber}>+favorite</button>
     <span>{latestFavorite}</span>
     <button on:click={addBasketNumber}>+basket</button>

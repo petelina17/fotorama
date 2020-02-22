@@ -23,10 +23,11 @@
     <div class="toolbar">
         <i class="fas fa-search-plus"></i>
 
-        <!--        bind function heartClick to mouse click event on icon-->
-        <i class="fas fa-heart"
-           style="{heartSelected ? 'color:red' : ''}"
-           on:click={heartClick}></i>
+        <!-- bind function heartClick to mouse click event on icon -->
+        <i class="fas fa-heart {heartSelected ? 'active' : ''}"
+           on:click={heartClick}>
+        </i>
+
         <i class="fas fa-cart-plus" on:click={basketClick}></i>
 
     </div>
@@ -60,5 +61,8 @@
     }
     .toolbar:hover {
         opacity: 1;
+    }
+    .active {
+        color: red;
     }
 </style>
