@@ -45,7 +45,8 @@
     })
 
     function navPanelHeartClickHandler() {
-        showWishList = true
+        showWishList = !showWishList
+        showCart = false
     }
 
     function wishListCloseHandler() {
@@ -53,7 +54,8 @@
     }
 
     function navPanelCartClickHandler() {
-        showCart = true
+        showCart = !showCart
+        showWishList = false
     }
 
     function cartCloseHandler() {
