@@ -1,15 +1,25 @@
 <script>
+    import { createEventDispatcher } from 'svelte';
     import {userStore} from './user'
 
     export let favoriteNumber = 0
     export let basketNumber = 0
+
+    // Svelte: special feature to sent events to parent component
+    const dispatch = createEventDispatcher();
+
+    function heartClick() {
+        // send to parent-component event "heart-click" with object as a param (event.detail)
+        dispatch('heart-click');
+    }
+
 </script>
 
 <div id="nav-panel">
     <h1>PHOTORAMA</h1>
     <div class="spacer">&nbsp;</div>
 
-    <i class="far fa-heart"></i>
+    <i class="far fa-heart" on:click={heartClick}></i>
     <div class="badge">{$userStore.favoriteNumber}</div>
 
     <div class="spacer">&nbsp;</div>

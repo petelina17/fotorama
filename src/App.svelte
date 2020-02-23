@@ -2,11 +2,10 @@
     import {onMount} from 'svelte'
     import Catalog from './Catalog.svelte'
     import NavPanel from './NavPanel.svelte'
-
+    import WishList from './WishList.svelte'
     import {userStore} from './user'
 
-    let latestFavorite = 'Latest saved';
-    let latestBasket = 'Latest add to basket';
+    let showWishList = false
 
     function addFavoriteNumber(event) {
         latestFavorite = event.detail.title
@@ -33,18 +32,18 @@
             $userStore[key] = stored[key]
         })
     })
+
+    function navPanelHeartClickHandler() {
+        showWishList = true
+    }
 </script>
 
 <main>
-    <NavPanel/>
+    <NavPanel on:heart-click={navPanelHeartClickHandler}/>
 
-    <!--	Svelte: bind function to button click -->
-    <!--
-    <button on:click={addFavoriteNumber}>+favorite</button>
-    <span>{latestFavorite}</span>
-    <button on:click={addBasketNumber}>+basket</button>
-    <span>{latestBasket}</span>
-    -->
+    {#if showWishList === true}
+        <WishList />
+    {/if}
 
     <!--	reactivity: component watches parameter values changing-->
     <Catalog favorites={$userStore.favoriteList}
@@ -55,6 +54,7 @@
 
 <style>
     main {
+        position: relative;
         text-align: center;
         padding: 0;
         max-width: 240px;
