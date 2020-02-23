@@ -39,10 +39,12 @@
     <NavPanel/>
 
     <!--	Svelte: bind function to button click -->
+    <!--
     <button on:click={addFavoriteNumber}>+favorite</button>
     <span>{latestFavorite}</span>
     <button on:click={addBasketNumber}>+basket</button>
     <span>{latestBasket}</span>
+    -->
 
     <!--	reactivity: component watches parameter values changing-->
     <Catalog favorites={$userStore.favoriteList}
