@@ -3,9 +3,12 @@
     import Catalog from './Catalog.svelte'
     import NavPanel from './NavPanel.svelte'
     import WishList from './WishList.svelte'
+    import Cart from './Cart.svelte'
     import {userStore} from './user'
 
     let showWishList = false
+    let showCart = false
+
     let latestFavorite = ''
     let latestBasket = ''
 
@@ -31,7 +34,9 @@
         const storedJSON = localStorage.getItem('chicago-user')
         const stored = JSON.parse(storedJSON)
         Object.keys($userStore).forEach(key => {
-            $userStore[key] = stored[key]
+            if (stored.hasOwnProperty(key)) {
+                $userStore[key] = stored[key]
+            }
         })
     })
 
@@ -42,15 +47,26 @@
     function wishListCloseHandler() {
         showWishList = false
     }
+
+    function navPanelCartClickHandler() {
+        showCart = true
+    }
+
+    function cartCloseHandler() {
+        showCart = false
+    }
 </script>
 
 <main>
-    <NavPanel on:heart-click={navPanelHeartClickHandler}/>
+    <NavPanel on:heart-click={navPanelHeartClickHandler} on:basket-click={navPanelCartClickHandler}/>
 
     {#if showWishList === true}
         <WishList on:close={wishListCloseHandler}/>
     {/if}
 
+    {#if showCart === true}
+        <Cart on:close={cartCloseHandler}/>
+    {/if}
     <!--	reactivity: component watches parameter values changing-->
     <Catalog favorites={$userStore.favoriteList}
              on:framebox-heart={addFavoriteNumber}

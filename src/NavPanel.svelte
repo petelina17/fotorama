@@ -13,6 +13,11 @@
         dispatch('heart-click');
     }
 
+    function basketClick() {
+        // send to parent-component event "heart-click" without params
+        dispatch('basket-click');
+    }
+
 </script>
 
 <div id="nav-panel">
@@ -24,7 +29,7 @@
 
     <div class="spacer">&nbsp;</div>
 
-    <i class="fas fa-cart-plus"></i>
+    <i class="fas fa-cart-plus" on:click={basketClick}></i>
     <div class="badge">{$userStore.basketNumber}</div>
 </div>
 
