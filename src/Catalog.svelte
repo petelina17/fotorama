@@ -3,6 +3,7 @@
     import FrameBox from "./FrameBox.svelte";
 
     export let favorites = [];
+    export let basket = [];
 
     const list = ['mountain', 'ocean', 'sea', 'desert', 'forest', 'sky', 'sunrise', 'sunset',
     'cat', 'dog', 'horse', 'pig', 'fox', 'bird', 'rabbit', 'city', 'road', 'car', 'park',
@@ -27,6 +28,7 @@
     <div class="frame-box">
         <FrameBox title={frame}
                   heartSelected={favorites.includes(frame)}
+                  basketSelected={basket.includes(frame)}
                   on:heart-click={frameboxHeartHandler}
                   on:basket-click={frameboxBasketHandler}
         />

@@ -3,6 +3,7 @@
 
     export let title;
     export let heartSelected = false;
+    export let basketSelected = false;
 
     // Svelte: special feature to sent events to parent component
     const dispatch = createEventDispatcher();
@@ -10,11 +11,12 @@
     function heartClick() {
         // send to parent-component event "heart-click" with object as a param (event.detail)
         dispatch('heart-click', {title: title});
-        heartSelected = true;
+        heartSelected = true
     }
 
     function basketClick() {
         dispatch('basket-click', {title: title})
+        basketSelected = true
     }
 </script>
 
@@ -24,11 +26,13 @@
         <i class="fas fa-search-plus"></i>
 
         <!-- bind function heartClick to mouse click event on icon -->
-        <i class="fas fa-heart {heartSelected ? 'active' : ''}"
+        <i class="fas fa-heart {heartSelected ? 'active-favorite' : ''}"
            on:click={heartClick}>
         </i>
 
-        <i class="fas fa-cart-plus" on:click={basketClick}></i>
+        <i class="fas fa-cart-plus {basketSelected ? 'active-basket' : ''}"
+           on:click={basketClick}>
+        </i>
 
     </div>
 </div>
@@ -62,7 +66,10 @@
     .toolbar:hover {
         opacity: 1;
     }
-    .active {
+    .active-favorite {
         color: red;
+    }
+    .active-basket {
+        color:darkblue;
     }
 </style>

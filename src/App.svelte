@@ -70,8 +70,10 @@
     {#if showCart === true}
         <Cart on:close={cartCloseHandler}/>
     {/if}
+
     <!--	reactivity: component watches parameter values changing-->
     <Catalog favorites={$userStore.favoriteList}
+             basket={$userStore.basketList}
              on:framebox-heart={addFavoriteNumber}
              on:framebox-basket={addBasketNumber}
     />
