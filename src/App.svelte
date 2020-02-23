@@ -1,10 +1,10 @@
 <script>
     import {fade} from 'svelte/transition'
     import {onMount} from 'svelte'
-    import Catalog from './Catalog.svelte'
-    import NavPanel from './NavPanel.svelte'
-    import WishList from './WishList.svelte'
-    import Cart from './Cart.svelte'
+    import Catalog from './components/Catalog.svelte'
+    import NavPanel from './components/NavPanel.svelte'
+    import WishList from './components/WishList.svelte'
+    import Cart from './components/Cart.svelte'
     import {userStore} from './user'
 
     let showWishList = false

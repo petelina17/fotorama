@@ -1,6 +1,6 @@
 <script>
     import { createEventDispatcher } from 'svelte';
-    import {userStore} from './user'
+    import {userStore} from '../user'
 
     export let favoriteNumber = 0
     export let basketNumber = 0

@@ -1,6 +1,6 @@
 <script>
     import { createEventDispatcher } from 'svelte'
-    import {userStore} from './user'
+    import {userStore} from '../user'
 
     // Svelte: special feature to sent events to parent component
     const dispatch = createEventDispatcher()
