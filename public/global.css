@@ -55,6 +55,9 @@ button {
 	color: #333;
 	background-color: #f4f4f4;
 	outline: none;
+	font-size: 1.8rem;
+	padding: 0.2em 0.8em;
+	border-radius: 0.2em;
 }
 
 button:disabled {

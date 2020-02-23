@@ -6,6 +6,8 @@
     import {userStore} from './user'
 
     let showWishList = false
+    let latestFavorite = ''
+    let latestBasket = ''
 
     function addFavoriteNumber(event) {
         latestFavorite = event.detail.title
