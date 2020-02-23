@@ -9,7 +9,7 @@
     const dispatch = createEventDispatcher();
 
     function heartClick() {
-        // send to parent-component event "heart-click" with object as a param (event.detail)
+        // send to parent-component event "heart-click" without params
         dispatch('heart-click');
     }
 

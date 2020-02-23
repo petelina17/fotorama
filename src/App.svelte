@@ -36,13 +36,17 @@
     function navPanelHeartClickHandler() {
         showWishList = true
     }
+
+    function wishListCloseHandler() {
+        showWishList = false
+    }
 </script>
 
 <main>
     <NavPanel on:heart-click={navPanelHeartClickHandler}/>
 
     {#if showWishList === true}
-        <WishList />
+        <WishList on:close={wishListCloseHandler}/>
     {/if}
 
     <!--	reactivity: component watches parameter values changing-->
