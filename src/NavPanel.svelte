@@ -1,16 +1,18 @@
 <script>
-    export let favoriteNumber = 0;
-    export let basketNumber = 0;
+    import {userStore} from './user'
+
+    export let favoriteNumber = 0
+    export let basketNumber = 0
 </script>
 
 <div id="nav-panel">
     <i class="far fa-heart"></i>
-    <div class="badge">{favoriteNumber}</div>
+    <div class="badge">{$userStore.favoriteNumber}</div>
 
     <div class="spacer">&nbsp;</div>
 
     <i class="fas fa-cart-plus"></i>
-    <div class="badge">{basketNumber}</div>
+    <div class="badge">{$userStore.basketNumber}</div>
 </div>
 
 <style>

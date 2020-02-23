@@ -1,46 +1,42 @@
 <script>
-	import { onMount } from 'svelte';
-    import Catalog from "./Catalog.svelte";
-    import NavPanel from "./NavPanel.svelte";
+    import {onMount} from 'svelte'
+    import Catalog from './Catalog.svelte'
+    import NavPanel from './NavPanel.svelte'
 
-    let user = {
-        favoriteNumber: 0,
-        basketNumber: 0,
-        favoriteList: []
-    };
+    import {userStore} from './user'
 
     let latestFavorite = 'Latest saved';
     let latestBasket = 'Latest add to basket';
 
-    function addFavoriteNumber (event) {
-        latestFavorite = event.detail.title;
-        if (!user.favoriteList.includes(latestFavorite)) {
-            user.favoriteList.push(latestFavorite);
-            user.favoriteNumber += 1;
+    function addFavoriteNumber(event) {
+        latestFavorite = event.detail.title
+        if (!$userStore.favoriteList.includes(latestFavorite)) {
+            $userStore.favoriteList.push(latestFavorite)
+            $userStore.favoriteNumber += 1
         }
-        localStorage.setItem('chicago-user', JSON.stringify(user));
+        localStorage.setItem('chicago-user', JSON.stringify($userStore))
     }
 
-    function addBasketNumber (event) {
-        user.basketNumber += 1;
-		localStorage.setItem('chicago-user', JSON.stringify(user));
-		latestBasket = event.detail.title;
+    function addBasketNumber(event) {
+        $userStore.basketNumber += 1
+        localStorage.setItem('chicago-user', JSON.stringify($userStore))
+        latestBasket = event.detail.title
     }
 
     // Every component has a lifecycle that starts when it is created, and ends when it is destroyed.
-	// There are a handful of functions that allow you to run code at key moments during that lifecycle.
-	// Svelte specific function: runs after the component is first rendered to the DOM
-	onMount(async () => {
-		const stored = localStorage.getItem('chicago-user');
-		if (stored != null && stored !== '') {
-			user = JSON.parse(stored)
-		}
-	});
+    // There are a handful of functions that allow you to run code at key moments during that lifecycle.
+    // Svelte specific function: runs after the component is first rendered to the DOM
+    onMount(async () => {
+        const storedJSON = localStorage.getItem('chicago-user')
+        const stored = JSON.parse(storedJSON)
+        Object.keys($userStore).forEach(key => {
+            $userStore[key] = stored[key]
+        })
+    })
 </script>
 
 <main>
-    <!--	reactivity: component watches parameter values changing-->
-    <NavPanel basketNumber={user.basketNumber} favoriteNumber={user.favoriteNumber}/>
+    <NavPanel/>
 
     <!--	Svelte: bind function to button click -->
     <button on:click={addFavoriteNumber}>+favorite</button>
@@ -48,9 +44,10 @@
     <button on:click={addBasketNumber}>+basket</button>
     <span>{latestBasket}</span>
 
-    <Catalog favorites={user.favoriteList}
-            on:framebox-heart={addFavoriteNumber}
-            on:framebox-basket={addBasketNumber}
+    <!--	reactivity: component watches parameter values changing-->
+    <Catalog favorites={$userStore.favoriteList}
+             on:framebox-heart={addFavoriteNumber}
+             on:framebox-basket={addBasketNumber}
     />
 </main>
 
