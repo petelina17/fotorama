@@ -94,8 +94,9 @@
         position: relative;
         text-align: center;
         padding: 0;
-        max-width: 240px;
-        margin: 0 auto;
+        /*max-width: 240px;*/
+        width: 100%;
+        margin: 0 0;
     }
 
     h1 {

@@ -57,4 +57,20 @@
     .spacer {
         width: 2em;
     }
+    
+    @media (max-width: 420px) {
+        #nav-panel>i, #nav-panel>h1 {
+            font-size: 1.8rem;
+            /*margin-left: 2em;*/
+        }
+    }
+    @media (max-width: 330px) {
+        #nav-panel>i, #nav-panel>h1 {
+            font-size: 1.3rem;
+            /*margin-left: 2em;*/
+        }
+        .spacer {
+            width: 1em;
+        }
+    }
 </style>

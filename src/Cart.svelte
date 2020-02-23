@@ -74,4 +74,9 @@
         color: white;
         text-align: center;
     }
+    @media (max-width: 420px) {
+        .list {
+            font-size: 1.5rem;
+        }
+    }
 </style>
