@@ -38,7 +38,7 @@
 <style>
     #cart-list {
         position: absolute;
-        z-index: 1;
+        top: 4rem;
         min-height: 300px;
         width: 100%;
         background-color: #e1efff;

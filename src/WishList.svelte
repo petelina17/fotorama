@@ -38,10 +38,10 @@
 <style>
     #wish-list {
         position: absolute;
-        z-index: 1;
+        top: 4rem;
         min-height: 300px;
         width: 100%;
-        background-color: #faa597;
+        background-color: #ffc9c2;
     }
     .title {
         font-size: 2rem;

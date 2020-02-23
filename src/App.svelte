@@ -1,4 +1,5 @@
 <script>
+    import {fade} from 'svelte/transition'
     import {onMount} from 'svelte'
     import Catalog from './Catalog.svelte'
     import NavPanel from './NavPanel.svelte'
@@ -63,20 +64,27 @@
 <main>
     <NavPanel on:heart-click={navPanelHeartClickHandler} on:basket-click={navPanelCartClickHandler}/>
 
-    {#if showWishList === true}
-        <WishList on:close={wishListCloseHandler}/>
-    {/if}
-
-    {#if showCart === true}
-        <Cart on:close={cartCloseHandler}/>
-    {/if}
-
     <!--	reactivity: component watches parameter values changing-->
     <Catalog favorites={$userStore.favoriteList}
              basket={$userStore.basketList}
              on:framebox-heart={addFavoriteNumber}
              on:framebox-basket={addBasketNumber}
     />
+
+    {#if showWishList === true}
+        <div transition:fade="{{delay: 250, duration: 200}}">
+            <WishList on:close={wishListCloseHandler}/>
+        </div>
+
+    {/if}
+
+    {#if showCart === true}
+        <div transition:fade="{{delay: 250, duration: 200}}">
+            <Cart on:close={cartCloseHandler}/>
+        </div>
+    {/if}
+
+
 </main>
 
 <style>
