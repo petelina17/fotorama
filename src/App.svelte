@@ -16,15 +16,18 @@
         latestFavorite = event.detail.title
         if (!$userStore.favoriteList.includes(latestFavorite)) {
             $userStore.favoriteList.push(latestFavorite)
-            $userStore.favoriteNumber += 1
+            $userStore.favoriteNumber = $userStore.favoriteList.length
         }
         localStorage.setItem('chicago-user', JSON.stringify($userStore))
     }
 
     function addBasketNumber(event) {
-        $userStore.basketNumber += 1
-        localStorage.setItem('chicago-user', JSON.stringify($userStore))
         latestBasket = event.detail.title
+        if (!$userStore.basketList.includes(latestBasket)) {
+            $userStore.basketList.push(latestBasket)
+            $userStore.basketNumber = $userStore.basketList.length
+        }
+        localStorage.setItem('chicago-user', JSON.stringify($userStore))
     }
 
     // Every component has a lifecycle that starts when it is created, and ends when it is destroyed.
