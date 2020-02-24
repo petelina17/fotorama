@@ -4,20 +4,26 @@
 
 # Photorama - My svelte app
 
-This is a project  ...
+This is a project  type "proof of concept". This is an one-page app in form of photo-catalog;
+ 
+each photo can be chosen and added to wish-list (favourites) or/and to the cart and can be 
 
-To create ... git clone ...
+removed from there as well.
 
-
-*Note that you will need to have [Node.js](https://nodejs.org) installed.*
 
 
 ## Get started
 
-Install the dependencies...
+Clone the project locally:
 
 ```bash
-cd svelte-app
+git clone https://github.com/petelina17/photorama.git
+```
+
+Install the dependencies:
+
+```bash
+cd photorama
 npm install
 ```
 
